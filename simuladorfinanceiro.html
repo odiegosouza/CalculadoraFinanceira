@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora Financeira</title>
+
+  <style>
+  .mãe{
+    text-align: center;
+  }
+
+  .pai{
+    text-align: justify;
+    width: 500px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h2{
+  text-align: center;
+  }
+  </style>
+</head>
+<body>
+  <div class="mãe">
+  <h1>CALCULADORA FINANCEIRA</h1>
+  <span>Prazer, qual é o seu nome?</span><br>
+  <input type="text" id="input_nome"><br>
+  <span>Digite o nome da empresa:</span><br>
+  <input type="text" id="input_nome_empresa"><br>
+  <span>Número de clientes da academia:</span><Br>
+  <input type="number" id="input_clientes_academia"><Br>
+  <span>Digite o valor da mensalidade:</span><br>
+  <input type="number" id="valor_mensalidade"><br>
+  <span>Número de equipamentos da academia:</span><Br>
+  <input type="number" id="input_numero_equipamentos_academia"><Br>
+  <button onclick="calcular()">Faça sua simulação</button>
+  <div id="exibir"></div></div>
+</body>
+</html>
+
+<Script>
+   function calcular(){ 
+   var nome = input_nome.value;
+   var nomeempresa = input_nome_empresa.value;
+   var numeroclientes = Number(input_clientes_academia.value);
+   var numeroequipamentos = Number(input_numero_equipamentos_academia.value);
+   var mensalidade = valor_mensalidade.value;
+   var mensalidadeanual = mensalidade * 12;
+   var conta = numeroclientes * 25 / 100;
+   var subtracao = numeroclientes - conta;
+   var razao = mensalidade * numeroclientes;
+   var total = conta * mensalidade;
+
+
+   exibir.innerHTML = ` 
+
+   <div class="pai">
+   <h2>Olá ${nome}!!</h2>
+    
+   <br>A Sensorize está entusiasmada em apresentar o nosso projeto para a <b>${nomeempresa}</b> e a oportunidade de transformar a experiência dos alunos. No mercado fitness brasileiro, a desistência nos programas de atividade física é alta, em torno de 25% dos casos, isso representaria <b>uma perda de ${conta} alunos matriculados e um prejuízo de R$${total} reais nos próximos meses.</b> Identificamos os <b>principais fatores para desistência e cancelamento de planos das academias</b>. Podemos reverter essa situação, proporcionando uma academia moderna e centrada no aluno. Estamos empolgados por você estar considerando a TechGym como parceiro da <b>${nomeempresa}</b>. Prepare-se para uma jornada incrível com resultados espetaculares!!<br></div>
+  <br>
+  <br>
+  <button>Entrar em contato</button>
+   `
+   }
+    
+
+</Script>
